@@ -38,3 +38,11 @@ group by cube(a,b)：首先会对(a,b)进行group by，然后依次是(a)，(b)�
 group by grouping sets(a,b)：对(a),(b)进行group by
 
 NVL(expr1, expr2)：expr1为null，返回expr2；expr1不为空，返回expr1。
+
+当如下事件发生时，会隐式的执行Commit动作：
+  1、数据定义语句被执行的时候，比如新建一张表：Create Table …
+  2、数据控制语句被执行的时候，比如赋权 GRANT …( 或者 DENY)
+  3、正常退出 iSQL*Plus 或者PLSQL DEVELOPER, 而没有显式的执行 COMMIT 或者 ROLLBACK 语句 。
+
+当如下事件发生时，会隐式执行Rollback动作：
+  1、非正常退出 iSQL*Plus , PLSQL DEVELOPER, 或者发生系统错误。
