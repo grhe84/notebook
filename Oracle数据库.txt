@@ -1,0 +1,40 @@
+oracle的order by:
+	ORDER BY first_name, last_name DESC(first_name升序，last_name降序)
+	order by state nulls first(state升序并把null值放到最前面，默认:nulls first)
+	order by state desc nulls last(state降序并把null值放到最后)
+	
+oracle的distinct:
+	select distinct column1, column2(column1与column2联合去重)
+	distinct将null值视为重复值，如果对null值去重那么只返回一个null
+	distinct：只能出现在查询列的最前面，对查询的列联合去重
+	
+oracle只需启动两个服务:
+	OracleOraDB12Home1TNSListener与OracleServiceORCL
+
+oracle运行sql文件:
+	@sql文件路径
+	
+to_date('1911-10-10', 'yyyy-mm-dd')：把字符串转换成日期
+c1 || c2：连接两个字符串
+decode(条件,值1,翻译值1,值2,翻译值2,...值n,翻译值n,缺省值):
+	IF 条件=值1 THEN
+　　RETURN(翻译值1)
+　　ELSIF 条件=值2 THEN
+　　RETURN(翻译值2)
+　　......
+　　ELSIF 条件=值n THEN
+　　RETURN(翻译值n)　　
+　　ELSE
+　　RETURN(缺省值)
+　　END IF
+
+extract(DAY from 指定日期 ) 日：获取几号
+extract(MONTH from 指定日期 ) 月：获取月份
+extract(YEAR from 指定日期 ) 年：获取年份
+
+floor(数值)：向下取整
+
+group by cube(a,b)：首先会对(a,b)进行group by，然后依次是(a)，(b)，最后对全表进行group by操作
+group by grouping sets(a,b)：对(a),(b)进行group by
+
+NVL(expr1, expr2)：expr1为null，返回expr2；expr1不为空，返回expr1。
