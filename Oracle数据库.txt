@@ -46,3 +46,26 @@ NVL(expr1, expr2)：expr1为null，返回expr2；expr1不为空，返回expr1。
 
 当如下事件发生时，会隐式执行Rollback动作：
   1、非正常退出 iSQL*Plus , PLSQL DEVELOPER, 或者发生系统错误。
+
+select * from table [start with condition1]
+connect by [prior] id=parentid
+一般用来查找存在父子关系的数据，也就是树形结构的数据；其返还的数据也能够明确的区分出每一层的数据。
+start with condition1 是用来限制第一层的数据，或者叫根节点数据；以这部分数据为基础来查找第二层数据，然后以第二层数据查找第三层数据以此类推。
+connect by [prior] id=parentid 这部分是用来指明oracle在查找数据时以怎样的一种关系去查找；比如说查找第二层的数据时用第一层数据的id去跟表里面记录的parentid字段进行匹配，
+如果这个条件成立那么查找出来的数据就是第二层数据，同理查找第三层第四层…等等都是按这样去匹配。
+level关键字，代表树形结构中的层级编号；第一层是数字1，第二层数字2，依次递增。
+
+lpad('gao',10,'*')：在字符串'gao'的左边添加'*'，直到字符串总长度为10
+
+union和union all：union去掉重复记录，union all保留重复记录
+
+substr(c1,n1[,n2])：在字符串c1里，从n1开始取n2个字符;若不指定n2,则取到结束的字串.(中文算一个字符)
+
+round(x, y)：x保留y位小数
+
+case的用法：
+  case
+    when sex = '1' then '男'  
+    when sex = '2' then '女'  
+    else '其他'
+  end
