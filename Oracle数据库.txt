@@ -77,3 +77,5 @@ case的用法：
   end
 
 not in 集合：如果集合里面有null，那么就会出问题。要排除集合里面的null。
+
+over(partition by id order by score desc)：按照id分组并按照score降序排序
