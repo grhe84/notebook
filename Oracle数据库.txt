@@ -75,3 +75,5 @@ case的用法：
     when sex = '2' then '女'  
     else '其他'
   end
+
+not in 集合：如果集合里面有null，那么就会出问题。要排除集合里面的null。
