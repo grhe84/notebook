@@ -17,7 +17,7 @@ oracle运行sql文件:
 to_date('1911-10-10', 'yyyy-mm-dd')：把字符串转换成日期
 c1 || c2：连接两个字符串
 decode(条件,值1,翻译值1,值2,翻译值2,...值n,翻译值n,缺省值):
-	IF 条件=值1 THEN
+    IF 条件=值1 THEN
 　　RETURN(翻译值1)
 　　ELSIF 条件=值2 THEN
 　　RETURN(翻译值2)
@@ -32,8 +32,14 @@ extract(DAY from 指定日期 ) 日：获取几号
 extract(MONTH from 指定日期 ) 月：获取月份
 extract(YEAR from 指定日期 ) 年：获取年份
 
+trunc(日期, 'yyyy')：获取日期所在年的第一天
+trunc(日期, 'mm')：获取日期所在月的第一天
+last_day(日期)：返回日期所在月的最后一天
+add_months(d1, n1)：返回日期d1加上n1个月后的日期。n1可以<0
+
 floor(数值)：向下取整
 
+group by rollup(a,b)：首先会对(a,b)进行group by ，然后对a进行group by，最后对全表进行group by操作
 group by cube(a,b)：首先会对(a,b)进行group by，然后依次是(a)，(b)，最后对全表进行group by操作
 group by grouping sets(a,b)：对(a),(b)进行group by
 
