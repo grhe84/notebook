@@ -43,7 +43,8 @@ group by rollup(a,b)：首先会对(a,b)进行group by ，然后对a进行group 
 group by cube(a,b)：首先会对(a,b)进行group by，然后依次是(a)，(b)，最后对全表进行group by操作
 group by grouping sets(a,b)：对(a),(b)进行group by
 
-NVL(expr1, expr2)：expr1为null，返回expr2；expr1不为空，返回expr1。
+nvl(expr1, expr2)：expr1为null，返回expr2；expr1不为空，返回expr1。
+nvl2(expr1, expr2, expr3)：expr1不为null，返回expr2；expr1为null，返回expr3。
 
 当如下事件发生时，会隐式的执行Commit动作：
   1、数据定义语句被执行的时候，比如新建一张表：Create Table …
@@ -79,3 +80,5 @@ case的用法：
 not in 集合：如果集合里面有null，那么就会出问题。要排除集合里面的null。
 
 over(partition by id order by score desc)：按照id分组并按照score降序排序
+
+null参与的运算结果为null
