@@ -1,0 +1,35 @@
+to_date('1911-10-10', 'yyyymmdd')的结果：
+    not a valid month
+add_months(to_date('2020-02-29', 'yyyy-mm-dd'), 1)的结果：
+    2020-03-31
+number最大精度：
+    38
+select max(salary) from employees where 1=2;的结果：
+    null
+select department_id, max(salary) from employees where 1=2 group by department_id;的结果：
+    null
+    
+a表       b表
+id        id 
+------    -------
+1         1
+2         2
+3         3
+4         null
+null
+
+a.id in (select b.id from b)的结果：
+id
+-------
+1
+2
+3
+
+a.id not in (select b.id from b)的结果：null
+a.id in (select b.id from b where b.id is null)的结果：null
+a.id in (select b.id from b where b.id is not null)的结果：
+id
+-------
+1
+2
+3
