@@ -1,0 +1,23 @@
+v_name表示一个变量，c_name表示一个常量
+xx%type：与xx具有相同的数据类型
+DBMS_OUTPUT.PUT_LINE(值)：输出值
+decode()、分组函数不能在PLSQL中使用
+当里层和外层拥有相同的变量时，使用块限定词加以区分
+select ... into 变量 from 表名：将查询出来的结果存入变量
+
+true and true = true
+true and false = false
+true and null = null
+false and false = false
+false and null = false
+null and null = null
+
+true or true = true
+true or false = true
+true or null = true
+false or false = false
+false or null = null
+null or null = null
+null not null = null
+
+loop循环:
