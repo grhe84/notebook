@@ -30,3 +30,38 @@ for循环：
 for a in list loop ... end loop;
 
 declare 变量 表%rowtype; 变量是表的一行记录
+
+内存表(类似数组)：
+type 类型名 is tabel of 存放数据的类型
+INDEX BY BINARY_INTEGER;
+
+隐式游标
+SQL%rowcount：受最近SQL语句影响的行数
+SQL%notfound：最近的SQL语句是否未影响任何数据
+
+显式游标
+declare
+  cursor 游标 is ...;
+begin
+  open 游标;
+  loop
+    fetch 游标 into 变量;
+    ...
+    exit when 游标%notfound;
+  end loop;
+  close游标;
+end;
+
+declare
+  cursor 游标 is ...;
+begin
+  for 游标的一条记录 in 游标 loop
+    ...
+  end loop;
+end;
+
+cursor 游标 is
+  select ...
+  for update of 字段 nowait;(打开游标时锁定记录)
+update ... set ...
+where current of 游标;(指向游标的当前记录)
