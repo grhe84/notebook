@@ -31,6 +31,12 @@ for a in list loop ... end loop;
 
 declare 变量 表%rowtype; 变量是表的一行记录
 
+记录类型(相当于java的类)
+type 类型名 is record(
+  变量1 类型1,
+  变量n 类型n
+);
+
 内存表(类似数组)：
 type 类型名 is tabel of 存放数据的类型
 INDEX BY BINARY_INTEGER;
