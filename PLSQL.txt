@@ -65,3 +65,43 @@ cursor 游标 is
   for update of 字段 nowait;(打开游标时锁定记录)
 update ... set ...
 where current of 游标;(指向游标的当前记录)
+
+异常
+begin
+exception
+  when 条件1 then...
+  when 条件2 then...
+  when others then...
+end;
+
+sqlcode：返回异常号
+sqlerrm：返回异常信息
+抛出异常：raise 异常
+raise_application_error(异常编号,异常信息)：抛出用户自定义异常
+里层没有处理的异常会抛出到外层
+
+存储过程：
+create or replace procedure 过程名(参数名 in/out 类型)
+is
+begin
+...
+end 过程名;
+
+in：传入的参数，可以省略in
+out：返回的参数
+in out：既是传入参数又是返回的参数
+
+调用存储过程：
+过程名(参数名1 => 值1, 参数名2 => 值2)：此时参数没有顺序
+删除存储过程：drop procedure 过程名;
+
+函数：
+create or replace function 函数名(传入的参数 in 类型) return 类型 is 定义返回值 类型;
+begin
+...
+return 返回值;
+end 函数名;
+
+删除函数：drop function 函数名;
+
+在package的body中，如果一个函数调用另一个函数，那么另一个函数必须先定义。
