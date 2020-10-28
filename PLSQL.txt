@@ -111,3 +111,10 @@ end 函数名;
 删除函数：drop function 函数名;
 
 在package的body中，如果一个函数调用另一个函数，那么另一个函数必须先定义。
+
+触发器
+create or replace trigger 触发器名
+  before/after insert/update/delete on 表名
+begin
+...
+end;
