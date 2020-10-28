@@ -20,6 +20,10 @@ false or null = null
 null or null = null
 null not null = null
 
+条件判断：
+if 条件 then... elsif 条件 then... else... end if;
+case when 条件 then... when 条件 then... else... end;
+
 loop循环:
 loop ... exit when 条件 end loop;
 
