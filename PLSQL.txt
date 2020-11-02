@@ -72,7 +72,7 @@ end;
 
 cursor 游标 is
   select ...
-  for update of 字段 nowait;(打开游标时锁定记录)
+  for update (of 字段) nowait;(游标自动给指定的表或字段加锁，防止同时有其他程序修改表或字段)
 update ... set ...
 where current of 游标;(指向游标的当前记录)
 
