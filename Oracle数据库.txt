@@ -80,5 +80,8 @@ case的用法：
 not in 集合：如果集合里面有null，那么就会出问题。要排除集合里面的null。
 
 over(partition by id order by score desc)：按照id分组并按照score降序排序
+row_number()：返回行信息，没有排名
+dense_rank()：返回连续排名
+rank()：返回不连续排名
 
 null参与的运算结果为null
