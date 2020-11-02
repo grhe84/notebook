@@ -85,3 +85,5 @@ dense_rank()：返回连续排名
 rank()：返回不连续排名
 
 null参与的运算结果为null
+
+lag(...)/lead(...) over(partition 字段 order by 字段)：取上一个/下一个值
