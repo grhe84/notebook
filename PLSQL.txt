@@ -122,3 +122,17 @@ create or replace trigger 触发器名
 begin
 ...
 end;
+
+执行动态sql：
+execute immediate 动态sql into 变量
+
+使用游标变量接收动态sql的多行返回结果
+
+declare
+  type 游标变量 is ref cursor
+begin
+  open 游标变量 for 动态sql;
+  loop
+  end loop
+  close 游标变量;
+end;
