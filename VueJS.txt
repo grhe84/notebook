@@ -1,0 +1,10 @@
+v-once指令：元素和组件只显示一次，不会随着数据的变化而变化
+
+v-html指令
+<h2 v-html="url"></h2>：url里面有html标签，会按照html格式解析
+
+v-pre指令
+<h2 v-pre>{{name}}</h2>：显示'{{name}}'而不是mustache语法
+
+v-bind(简写:)
+<input type='text' :value='name'/>：input的value随name的变化而变化
