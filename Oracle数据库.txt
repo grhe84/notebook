@@ -97,3 +97,10 @@ initcap('字符串 字符串 字符串...')：以空格分隔的每个字符串�
 instr(字符串, 子串)：返回子串在字符串中首次出现的位置，没有返回0
 trim(子串 from 字符串)：去掉字符串首尾两端的子串
 replace(字符串, 子串, 替换子串)：把字符串的所有子串都替换为替换子串
+
+多行子查询
+any操作符：工资低于任何一个工资就可以
+where salary < any (select salary ...)
+
+all操作符：工资低于所有的工资
+where salary < all (select salary ...)
